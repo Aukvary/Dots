@@ -6,6 +6,19 @@ vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true })
 
 km_set("n", "<leader>e", "<Cmd>Neotree toggle<CR>")
+require("neo-tree").setup({
+    window = {
+        mappings = {
+            ["<space>"] = "none",
+            ["l"] = "open",
+            ["h"] = "close_node",
+            ["v"] = "open_vsplit",
+            ["s"] = "open_split",
+            ["t"] = "open_tabnew",
+            ["P"] = { "toggle_preview", config = { use_float = true } },
+        }
+    }
+})
 km_set("n", "<C-s>", "<Cmd>w<CR>")
 km_set("i", "<C-s>", "<Cmd>w<CR>")
 km_set('n', '<M-v>', '<C-v>')
