@@ -1,0 +1,63 @@
+[cursor]
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "off"
+shape = "Block"
+
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[window]
+decorations = "None"
+dynamic_title = true
+startup_mode = "Windowed"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window.dimensions]
+columns = 82
+lines = 25
+
+[window.padding]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+chars = "\u0003"
+
+[[keyboard.bindings]]
+key = "С"
+mods = "Control"
+action = "Copy"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+key = "С"
+mods = "Control"
+chars = "\u0003"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "М"
+mods = "Control"
+action = "Paste"
+
+[general]
+live_config_reload = true
+import = ["/home/aukvary/.config/alacritty/colors.toml", "/home/aukvary/.config/alacritty/fonts.toml"]

@@ -1,0 +1,19 @@
+[font]
+size = 14
+builtin_box_drawing = true
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "Bold Italic"

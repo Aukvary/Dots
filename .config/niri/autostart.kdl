@@ -1,0 +1,5 @@
+spawn-at-startup "quickshell"
+spawn-at-startup "awww-daemon"
+spawn-sh-at-startup "awww img ~/wallpapers/2k.jpg"
+spawn-sh-at-startup "awww img -o \"HDMI-A-1\" ~/wallpapers/fullhd.jpg"
+spawn-sh-at-startup "python ~/tg-ws-proxy/linux.py"

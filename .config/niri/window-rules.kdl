@@ -1,0 +1,80 @@
+
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="^foot(client)?$"
+    match app-id="^Alacritty$"
+    opacity 0.90
+    background-effect {
+        blur true
+    }
+    default-window-height { proportion 1.1; }
+}
+
+window-rule {
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id=r#"^org\.telegram\.desktop$"#
+    //open-at 1 0  // Откроет в 1-й колонке (индексация с 0), в 0-й позиции (самое верхнее окно)
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 0.5; }
+    open-on-output "HDMI-A-1"
+}
+
+window-rule {
+    match app-id=r#"^vesktop$"#
+    //open-at 1 1  // Откроет в 1-й колонке, в 1-й позиции (сразу под первым окном)
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 0.5; }
+    open-on-output "HDMI-A-1"
+}
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+}
+
+window-rule {
+    match title="quickshell-calendar"
+    open-floating true
+    default-column-width { fixed 220; }
+    default-window-height { fixed 250; }
+}
+
+window-rule {
+    match title="quickshell-tray-popup"
+    open-floating true
+    default-column-width { fixed 180; }
+    default-window-height {}
+}
