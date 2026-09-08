@@ -4,11 +4,6 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
-window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
 }
@@ -16,6 +11,7 @@ window-rule {
 window-rule {
     match app-id="^foot(client)?$"
     match app-id="^Alacritty$"
+    match app-id="kitty"
     opacity 0.90
     background-effect {
         blur true
@@ -27,22 +23,44 @@ window-rule {
     draw-border-with-background false
 }
 
+
 window-rule {
-    match app-id=r#"^org\.telegram\.desktop$"#
-    //open-at 1 0  // Откроет в 1-й колонке (индексация с 0), в 0-й позиции (самое верхнее окно)
-    default-column-width { proportion 1.0; }
-    default-window-height { proportion 0.5; }
-    open-on-output "HDMI-A-1"
+    match app-id=r#"YandexMusic$"#
+    open-on-output "HDMI-A-2"
 }
 
 window-rule {
-    match app-id=r#"^vesktop$"#
-    //open-at 1 1  // Откроет в 1-й колонке, в 1-й позиции (сразу под первым окном)
+    match app-id=r#"^org\.telegram\.desktop$"#
     default-column-width { proportion 1.0; }
     default-window-height { proportion 0.5; }
     open-on-output "HDMI-A-1"
+    open-maximized false
+    open-focused false
+    default-column-display "normal"
 }
-// Indicate screencasted windows with red colors.
+
+window-rule {
+    match app-id=r#"^org\.telegram\.desktop$"#
+    match title="Media viewer"
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 0.5; }
+    open-on-output "HDMI-A-1"
+    open-maximized false
+    open-focused true
+    default-column-display "normal"
+}
+
+
+window-rule {
+    match app-id=r#"^vesktop$"#
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 0.5; }
+    open-on-output "HDMI-A-1"
+    open-maximized false
+    open-focused false
+    default-column-display "normal"
+}
+
 window-rule {
     match is-window-cast-target=true
 

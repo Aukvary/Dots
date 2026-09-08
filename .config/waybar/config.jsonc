@@ -1,0 +1,179 @@
+{
+"layer": "top",
+"position": "top",
+"height": 10,
+"mode": "dock",
+"margin": "0px 6px",
+"reload_style_on_change": true,
+
+"modules-left": ["group/powermenu", "group/audio", "niri/language"],
+  "modules-center": ["group/time-date", "group/media"],
+  "modules-right": ["tray", "niri/workspaces"],
+  
+  "hyprland/workspaces": {
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+          "1": "1",
+          "2": "2", 
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+      }
+  },
+
+  "niri/language": {
+    "format": "󰇧 {short}"
+  },
+
+  "group/time-date": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": 300,
+        "children-class": "clocks",
+        "transition-left-to-right": false,
+      },
+      "modules": [
+        "clock#time",
+        "clock#date"
+      ]
+  },
+
+  "clock#time": {
+      "tooltip": false,
+      "format": "󰥔 {:%H:%M}",
+      "tooltip-format": "<big>{:%Y %B}</big>"
+  },
+
+  "clock#date": {
+    "tooltip": false,
+    "format": "󰃭 {:%d.%m}   ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+
+  "group/audio": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "audio"
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
+  
+  "pulseaudio": {
+      "tooltip": false,
+      "format": "{icon}  {volume}%",
+      "format-muted": "󰖁",
+      "format-icons": {
+          "default": ["", "", ""]
+      },
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+
+  "tray": {
+      "tooltip": false,
+      "icon-size": 16,
+      "spacing": 10
+  },
+
+"group/media": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "medias"
+    },
+    "modules": [
+      "custom/media-name",
+      "custom/media-artist",
+      "custom/prev",
+      "custom/pause",
+      "custom/next"
+    ]
+  },
+  
+  "custom/media-name": {
+      "tooltip": false,
+      "format": "󰎈 {}",
+      "exec": "playerctl metadata --format '{{title}}' 2>/dev/null || echo 'no music :('",
+      "max-length": 30,
+      "interval": 1
+  },
+
+    "custom/media-artist": {
+      "tooltip": false,
+      "format": "| 󰗋 {}",
+      "exec": "playerctl metadata --format '{{artist}}' 2>/dev/null || echo '...'",
+      "max-length": 30,
+      "interval": 1
+  },
+
+  "custom/prev": {
+      "tooltip": false,
+      "format": "⏮",
+      "on-click": "playerctl previous"
+  },
+
+  "custom/pause": {
+    "tooltip": false,
+    "format": "{}",
+    "on-click": "playerctl play-pause",
+    "exec": "~/.config/waybar/scripts/pause.sh",
+    "return-type": "json",
+    "interval": "persistent"
+  },
+
+  "custom/next": {
+      "tooltip": false,
+      "format": "⏭",
+      "max-length": 30,
+      "interval": 0.1,
+      "on-click": "playerctl next"
+  },
+
+  "group/powermenu": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": 300,
+        "children-class": "powers"
+      },
+      "modules": [
+        "custom/power-button",
+        "custom/poweroff",
+        "custom/reboot"
+      ]
+  },
+
+  "custom/power-button": {
+    "format" : "󱪇",
+    "tooltip": false,
+    "on-click": "kitty",
+    "interval": "once"
+  },
+
+  "custom/poweroff": {
+    "format": "⏻",
+    "on-click": "systemctl poweroff",
+    "escape": true,
+    "tooltip": false
+  },
+  
+  "custom/reboot": {
+    "format": "🗘",
+    "on-click": "systemctl reboot",
+    "escape": true,
+    "tooltip": false
+  }
+}

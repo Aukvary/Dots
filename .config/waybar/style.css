@@ -1,0 +1,138 @@
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+    font-size: 14px;
+    min-height: 0;
+    font-weight: 900; /* Очень жирный */
+}
+
+window#waybar {
+    background: none;
+}
+
+#powermenu,
+#audio,
+#language,
+#time-date,
+#media,
+#tray,
+#workspaces
+{
+    background-color: rgba(40, 44, 52, 0.7);
+    border-radius: 15px;
+    padding: 0px 5px;
+    margin: 4px 4px;
+
+    color: rgb(200, 255, 239);
+    text-shadow: 0 0 5px rgba(200, 253, 255, 0.5);
+}
+
+#tray,
+#language,
+#time-date
+{
+    padding: 0px 12px;
+}
+
+#custom-power-button,
+#custom-poweroff,
+#custom-reboot,
+
+#pulseaudio,
+#pulseaudio-slider
+
+#clock,
+
+#custom-media-name, 
+#custom-prev,
+#custom-pause,
+#custom-next,
+
+#workspaces button.active
+{
+    padding: 0px 5px;
+    margin: 4px 4px;
+
+    background: none;
+    color: rgb(200, 246, 255);
+    text-shadow: 0 0 5px rgba(253, 120, 255, 0.5);
+}
+
+#custom-power-button:hover,
+#custom-poweroff:hover,
+#custom-reboot:hover,
+#pulseaudio:hover,
+#custom-prev:hover,
+#custom-pause:hover,
+#custom-next:hover
+{
+    color: rgb(119, 144, 133);
+    text-shadow: 0 0 5px rgba(200, 253, 255, 0.31);
+}
+
+#workspaces button {
+    color: rgb(119, 144, 133);
+    text-shadow: 0 0 5px rgba(200, 253, 255, 0.31);
+}
+
+#custom-poweroff
+{
+    background: none;
+    color: rgb(255, 200, 200);
+    text-shadow: 0 0 5px rgba(255, 200, 200, 0.5);
+}
+
+#custom-reboot
+{
+    background: none;
+    color: rgb(255, 247, 200);
+    text-shadow: 0 0 5px rgba(236, 229, 32, 0.5);
+}
+
+#pulseaudio-slider {
+    min-width: 30px;
+    border-radius: 10px;
+    padding: 0px 12px;
+    margin: 4px 4px;
+}
+
+#pulseaudio-slider slider {
+    min-width: 30px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 8px;
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: rgba(58, 58, 98, 0);;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background: rgba(240, 240, 255, 1);
+}
+
+
+#custom-prev,
+#custom-pause,
+#custom-next {
+    padding: 0px 12px;
+    margin: 0px 0px;
+    font-size: 20px;
+} 
+
+#custom-power-button {
+    font-size: 16;
+}
+
+#custom-poweroff,
+#custom-reboot,
+#custom-power-button
+{
+    padding: 0px 10px;
+}

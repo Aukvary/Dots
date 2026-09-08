@@ -1,4 +1,4 @@
-spawn-at-startup "quickshell"
+spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
 spawn-sh-at-startup "awww img ~/dots/wallpapers/2k.jpg"
 spawn-sh-at-startup "awww img -o \"HDMI-A-1\" ~/dots/wallpapers/fullhd.jpg"
