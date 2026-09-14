@@ -96,3 +96,19 @@ window-rule {
     default-column-width { fixed 180; }
     default-window-height {}
 }
+
+window-rule {
+    match app-id=r#"^kompas"#
+    match app-id=r#"^kStudy"#
+    
+    open-focused true
+}
+
+window-rule {
+    match app-id=r#"^kompas"# 
+    match app-id=r#"^kStudy"# 
+    
+    // is-window-cast-to-floating=true
+    open-floating true
+    open-focused true
+}
