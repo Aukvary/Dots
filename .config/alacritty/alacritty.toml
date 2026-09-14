@@ -24,6 +24,11 @@ bindings = [
   { key = "v", mods = "Control", action = "Paste" },
   { key = "c", mods = "Control|Shift", chars = "\x03" }
 ]
+
 [general]
 live_config_reload = true
-import = ["/home/aukvary/.config/alacritty/colors.toml", "/home/aukvary/.config/alacritty/fonts.toml"]
+import = ["colors.toml", "fonts.toml"]
+
+[terminal.shell]
+program = "wsl.exe"
+args = ["~"]
