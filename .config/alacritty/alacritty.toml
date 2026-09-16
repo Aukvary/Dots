@@ -28,7 +28,3 @@ bindings = [
 [general]
 live_config_reload = true
 import = ["colors.toml", "fonts.toml"]
-
-[target.'cfg(windows)'.terminal.shell]
-program = "wsl.exe"
-args = ["~"]
