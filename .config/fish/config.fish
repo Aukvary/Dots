@@ -10,16 +10,22 @@ if status is-interactive
     alias sn='sudo -E nvim'
 
     alias pms='sudo pacman -S'
+    alias pmsyu='sudo pacman -Syu'
     alias pmrns='sudo pacman -Rns'
+    alias yas='yay -S'
+    alias yarns='yay -Rns'
 
     alias ls='lsd'
     alias l='ls -l'
     alias la='ls -a'
     alias lla='ls -la'
     alias lt='ls --tree'
-    alias cat='bat'
+    alias cls='clear'
     
     zoxide init fish | source
+    eval (ssh-agent -c) > /dev/null
+    ssh-add ~/.ssh/nsugit > /dev/null
+    clear
 end
 
 set -gx EDITOR nvim
