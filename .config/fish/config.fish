@@ -4,7 +4,7 @@ if status is-interactive
     alias ga='git add'
     alias gc='git commit -m'
     alias gp='git push'
-    alias gst 'git status'
+    alias gst='git status'
 
     alias n='nvim'
     alias sn='sudo -E nvim'
@@ -21,6 +21,7 @@ if status is-interactive
     alias lla='ls -la'
     alias lt='ls --tree'
     alias cls='clear'
+    alias cd='z'
     
     zoxide init fish | source
     eval (ssh-agent -c) > /dev/null
