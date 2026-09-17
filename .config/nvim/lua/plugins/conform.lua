@@ -8,7 +8,11 @@ require('conform').setup({
         python = { "black" },
         cpp = { "clang-format" },
         c = { "clang-format" },
+        objc = { "clang-format" },
+        objcpp = { "clang-format" },
+        cuda = { "clang-format" },
         rust = { "rustfmt" },
+        dockerfile = { "dockerfmt" },
     },
     format_on_save = {
         timeout_ms = 500,
