@@ -53,5 +53,5 @@ km_set("n", "<leader>cm", "<Cmd>Mason<CR>")
 local opts = { noremap = true, silent = true }
 km_set("n", "gd", vim.lsp.buf.definition, opts)
 km_set("n", "gi", vim.lsp.buf.implementation, opts)
-km_set("n", "gr", fzf.lsp_references, opts)
+km_set("n", "ga", fzf.lsp_references, opts)
 km_set("n", "<Leader>fo", vim.lsp.buf.format, opts)

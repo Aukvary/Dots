@@ -16,8 +16,11 @@ Checks: >
   -readability-identifier-naming,
   -readability-magic-numbers,
   -readability-comment-internal-link,
-  -llvm-header-guard,
-  -llvm-include-order
+  -llvm-include-order,
+  -clang-diagnostic-header-hygiene,
+  -clang-diagnostic-nonportable-include-path,
+  -clang-diagnostic-quoted-include-in-framework-header,
+  -clang-diagnostic-include-angled-in-module-map
 WarningsAsErrors: ''
 HeaderFilterRegex: '.*'
 FormatStyle: file
