@@ -6,13 +6,13 @@ vim.filetype.add({
 })
 
 vim.lsp.enable({
-  "rust-analyzer",
-  "lua-ls",
-  "clangd",
-  "docker-language-server",
-  "yaml-language-server",
-  "neocmakelsp",
-  "protols",
+    "rust-analyzer",
+    "lua_ls",
+    "clangd",
+    "dockerls",
+    "yamlls",
+    "neocmakelsp",
+    "protols",
 })
 
 vim.diagnostic.config({ virtual_text = true })

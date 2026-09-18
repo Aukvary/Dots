@@ -5,16 +5,17 @@ vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true })
 
+km_set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 km_set("n", "<leader>e", "<Cmd>Neotree focus<CR>")
 km_set("n", "<leader>E", "<Cmd>Neotree close<CR>")
 km_set("n", "<leader>u", "<Cmd>UndotreeToggle<CR>")
 
-km_set("n", "<C-s>", "<Cmd>w<CR>")
-km_set("n", "<C-s>", "<Cmd>w<CR>")
-km_set("i", "<C-q>", "<Cmd>q<CR>")
+km_set("n", "<leader>s", "<Cmd>w<CR>")
+km_set("n", "<leader>S", "<Cmd>wall<CR>")
+km_set("n", "<leader>q", "<Cmd>q<CR>")
+km_set("n", "<leader>Q", "<Cmd>qall<CR>")
 
-km_set("n", "<C-q>", "<Cmd>q<CR>")
 km_set('n', '<M-v>', '<C-v>')
 local fzf = require('fzf-lua')
 
@@ -50,6 +51,7 @@ km_set("n", "<leader>hd", gs.diffthis)
 km_set("n", "<leader>cm", "<Cmd>Mason<CR>")
 
 local opts = { noremap = true, silent = true }
-
-vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-vim.keymap.set("n", "<Leader>fo", ":lua vim.lsp.buf.format()<CR>", opts)
+km_set("n", "gd", vim.lsp.buf.definition, opts)
+km_set("n", "gi", vim.lsp.buf.implementation, opts)
+km_set("n", "gr", fzf.lsp_references, opts)
+km_set("n", "<Leader>fo", vim.lsp.buf.format, opts)

@@ -11,7 +11,7 @@ lint.linters_by_ft = {
 }
 
 lint.linters.cpplint.args = {
-    '--filter=-legal/copyright,-whitespace/comments',
+    '--filter=-legal/copyright,-whitespace/comments,-build/include_11',
     '$FILENAME',
 }
 

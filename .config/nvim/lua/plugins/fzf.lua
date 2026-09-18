@@ -1,6 +1,7 @@
 vim.pack.add({
-    { src = "https://github.com/ibhagwan/fzf-lua",          name = "fzf-lua" },
+    { src = "https://github.com/ibhagwan/fzf-lua", name = "fzf-lua" },
 })
+require('fzf-lua').register_ui_select()
 
 local actions = require('fzf-lua.actions')
 require('fzf-lua').setup({
