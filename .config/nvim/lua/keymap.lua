@@ -5,11 +5,16 @@ vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true })
 
+
 km_set("n", "<leader>e", "<Cmd>Neotree focus<CR>")
 km_set("n", "<leader>E", "<Cmd>Neotree close<CR>")
+km_set("n", "<leader>u", "<Cmd>UndotreeToggle<CR>")
 
 km_set("n", "<C-s>", "<Cmd>w<CR>")
-km_set("i", "<C-s>", "<Cmd>w<CR>")
+km_set("n", "<C-s>", "<Cmd>w<CR>")
+km_set("i", "<C-q>", "<Cmd>q<CR>")
+
+km_set("n", "<C-q>", "<Cmd>q<CR>")
 km_set('n', '<M-v>', '<C-v>')
 local fzf = require('fzf-lua')
 

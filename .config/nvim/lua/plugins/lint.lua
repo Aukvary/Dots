@@ -10,6 +10,11 @@ lint.linters_by_ft = {
     dockercompose = { "dclint" },
 }
 
+lint.linters.cpplint.args = {
+    '--filter=-legal/copyright,-whitespace/comments',
+    '$FILENAME',
+}
+
 vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
     callback = function()
         lint.try_lint()

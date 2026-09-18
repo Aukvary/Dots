@@ -1,0 +1,107 @@
+# https://github.com/nametake/golangci-lint-langserver
+# [language-server.golangci-lint]
+# command = "golangci-lint-langserver"
+# config = { command = [
+#   "golangci-lint",
+#   "run",
+#   "--enable-all",
+#   "--disable",
+#   "lll",
+#   "--out-format",
+#   "json",
+#   "--issues-exit-code=1"
+# ] }
+# --------
+[[language]]
+name = "toml"
+auto-format = true
+# https://github.com/bd82/toml-tools/tree/master/packages/prettier-plugin-toml
+formatter = { command = "prettier", args = ["--parser", "toml"] }
+
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[language]]
+name = "javascript"
+auto-format = true
+
+[[language]]
+name = "typescript"
+auto-format = true
+
+[[language]]
+name = "markdown"
+# https://github.com/executablebooks/mdformat
+formatter = { command = "mdformat", args = ["-"] }
+
+[[language]]
+name = "yaml"
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+[[language]]
+name = "d2"
+scope = ""
+file-types = ["d2"]
+comment-token = "#"
+roots = [""]
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "d2"
+source = { git = "https://git.pleshevski.ru/pleshevskii/tree-sitter-d2", rev = "eb6910126fa392b60832d834fe6640635cd35ba8" }
+
+[[language]]
+name = "svelte"
+auto-format = true
+
+# LSP init options: `config` is passed to the server as `initializationOptions`.
+# Note: a user `config` table replaces the built-in one (no deep merge at this
+# level), so the default values are re-declared next to the custom ones.
+
+[language-server.rust-analyzer.config]
+inlayHints.bindingModeHints.enable = false
+inlayHints.closingBraceHints.minLines = 10
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.typeHints.hideClosureInitialization = false
+files.watcher = "server"
+check.command = "clippy"
+
+[language-server.gopls.config.hints]
+assignVariableTypes = true
+compositeLiteralFields = true
+constantValues = true
+functionTypeParameters = true
+parameterNames = true
+rangeVariableTypes = true
+
+[language-server.gopls.config.formatting]
+gofumpt = true
+
+[language-server.svelteserver.config.configuration.typescript]
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.functionLikeReturnTypes.enabled = true
+inlayHints.enumMemberValues.enabled = true
+inlayHints.parameterNames.enabled = "all"
+
+[language-server.svelteserver.config.configuration.javascript]
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.functionLikeReturnTypes.enabled = true
+inlayHints.enumMemberValues.enabled = true
+inlayHints.parameterNames.enabled = "all"
+
+[language-server.svelteserver.config.configuration.svelte.plugin.svelte.format.config]
+# no-op since Svelte 4 (option was removed), kept for now
+svelteIndentScriptAndStyle = false
+
+# ---
+# [[language]]
+# name = "go"
+# language-servers = ["gopls", "golangci-lint"]
