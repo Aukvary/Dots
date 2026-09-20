@@ -6,6 +6,7 @@ ColumnLimit: 80
 IndentWidth: 4
 ContinuationIndentWidth: 4
 TabWidth: 4
+AccessModifierOffset: -4
 UseTab: Never
 
 # Выравнивание указателей и ссылок к типу (int* ptr, const Foo& foo)
