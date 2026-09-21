@@ -1,18 +1,13 @@
 BasedOnStyle: LLVM
 Language: Cpp
-
-# Длина строки и отступы
+BreakAfterAttributes: Always
 ColumnLimit: 80
 IndentWidth: 4
 ContinuationIndentWidth: 4
 TabWidth: 4
 AccessModifierOffset: -4
 UseTab: Never
-
-# Выравнивание указателей и ссылок к типу (int* ptr, const Foo& foo)
 PointerAlignment: Left
-
-# Отступы и скобки
 BreakBeforeBraces: Custom
 BraceWrapping:
   AfterClass: false
@@ -30,8 +25,6 @@ BraceWrapping:
   SplitEmptyFunction: false
   SplitEmptyRecord: false
   SplitEmptyNamespace: false
-
-# Пробелы
 SpaceBeforeParens: ControlStatements
 SpaceBeforeAssignmentOperators: true
 SpaceInEmptyParentheses: false
@@ -43,28 +36,25 @@ SpacesInCStyleCastParentheses: false
 SpaceAfterCStyleCast: false
 SpaceAfterLogicalNot: false
 SpaceAfterTemplateKeyword: true
-
-# Выравнивание
-AlignAfterOpenBracket: AlwaysBreak
+AlignAfterOpenBracket: BlockIndent
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
 AlignConsecutiveMacros: false
 AlignEscapedNewlines: Left
 AlignOperands: Align
 AlignTrailingComments: true
-
-# Переносы и вызовы функций
-AllowAllArgumentsOnNextLine: false
-AllowAllParametersOfDeclarationOnNextLine: false
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: Never
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: Inline
+AllowShortFunctionsOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterReturnType: None
 AlwaysBreakTemplateDeclarations: Yes
-
-# Массивы, списки инициализации и директивы
+BinPackParameters: false
+BreakConstructorInitializers: BeforeColon
+PackConstructorInitializers: BinPack
 Cpp11BracedListStyle: true
 FixNamespaceComments: true
 IncludeBlocks: Regroup

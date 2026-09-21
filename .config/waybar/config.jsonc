@@ -1,9 +1,9 @@
 {
 "layer": "top",
 "position": "top",
-"height": 10,
+"height": 3,
 "mode": "dock",
-"margin": "0px 6px",
+"margin": "0px 2px",
 "reload_style_on_change": true,
 
 "modules-left": ["group/powermenu", "group/audio", "niri/language"],

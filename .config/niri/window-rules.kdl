@@ -58,7 +58,7 @@ window-rule {
     open-on-output "HDMI-A-1"
     open-maximized false
     open-focused false
-    default-column-display "normal"
+    default-column-display "tabbed"
 }
 
 window-rule {
