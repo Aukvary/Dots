@@ -1,5 +1,5 @@
 spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
-spawn-sh-at-startup "awww img -o \"DP-1\" ~/wallpapers/windows.png"
+spawn-sh-at-startup "awww img -o \"DP-1\" ~/wallpapers/main.png"
 spawn-sh-at-startup "awww img -o \"HDMI-A-1\" ~/dots/wallpapers/fullhd.jpg"
 spawn-sh-at-startup "python ~/tg-ws-proxy/linux.py"
