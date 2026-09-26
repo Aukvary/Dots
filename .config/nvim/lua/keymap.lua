@@ -5,6 +5,17 @@ vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true })
 
+-- Переход к предыдущей ошибке
+vim.keymap.set('n', '[d', function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "Прыжок к предыдущей ошибке" })
+
+-- Переход к следующей ошибке
+vim.keymap.set('n', ']d', function()
+  vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "Прыжок к следующей ошибке" })
+vim.keymap.set('n', '<leader>o', vim.diagnostic.setloclist)
+
 km_set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 km_set("n", "<leader>e", "<Cmd>Neotree focus<CR>")
@@ -12,9 +23,7 @@ km_set("n", "<leader>E", "<Cmd>Neotree close<CR>")
 km_set("n", "<leader>u", "<Cmd>UndotreeToggle<CR>")
 
 km_set("n", "<leader>s", "<Cmd>w<CR>")
-km_set("n", "<leader>S", "<Cmd>wall<CR>")
 km_set("n", "<leader>q", "<Cmd>q<CR>")
-km_set("n", "<leader>Q", "<Cmd>qall<CR>")
 
 km_set('n', '<M-v>', '<C-v>')
 local fzf = require('fzf-lua')

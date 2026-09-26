@@ -8,6 +8,7 @@ if status is-interactive
 
     alias n='nvim'
     alias sn='sudo -E nvim'
+    alias nf='n $(fzf)'
 
     alias pms='sudo pacman -S'
     alias pmsyu='sudo pacman -Syu'
@@ -31,6 +32,9 @@ end
 
 set -gx EDITOR nvim
 set -gx PATH $HOME/.local/bin $PATH
+# Бинари, установленные Mason'ом (postgres-language-server, pg_format и т.д.)
+# Добавляем в конец, чтобы не перекрывать системные clang-format и т.п.
+fish_add_path --append $HOME/.local/share/nvim/mason/bin
 
 for file in ~/.config/fish/conf.d/*.fish
     source $file

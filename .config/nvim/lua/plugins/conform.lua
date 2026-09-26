@@ -13,6 +13,7 @@ require('conform').setup({
         cuda = { "clang-format" },
         rust = { "rustfmt" },
         dockerfile = { "dockerfmt" },
+        sql = { "pg_format" },
     },
     format_on_save = {
         timeout_ms = 500,
