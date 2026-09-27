@@ -13,7 +13,6 @@ vim.lsp.enable({
     "yamlls",
     "neocmakelsp",
     "protols",
-    "postgres-language-server",
 })
 
 vim.diagnostic.config({ virtual_text = true })
