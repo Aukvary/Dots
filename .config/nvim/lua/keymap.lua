@@ -5,6 +5,18 @@ vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true })
 
+km_set("n", "<leader>db", "<Cmd>DBUIToggle<CR>")
+km_set("n", "<leader>df", "<Cmd>DBUIFindBuffer<CR>")
+km_set("n", "<leader>da", "<Cmd>DBUIAddConnection<CR>")
+
+km_set("n", "<leader>rq", "<Cmd>%DB<CR>")
+km_set("n", "<leader>r", "<Plug>(db-execute-op)")
+km_set("v", "<leader>r", "<Plug>(db-execute)")
+
+km_set("n", "<leader>fS", function()
+    require("conform").format({ async = true, lsp_fallback = true })
+end)
+
 -- Переход к предыдущей ошибке
 vim.keymap.set('n', '[d', function()
   vim.diagnostic.jump({ count = -1, float = true })
@@ -33,6 +45,7 @@ km_set("n", "<leader>fg", fzf.live_grep)
 km_set("n", "<leader>fb", fzf.buffers)
 km_set("n", "<leader>fh", fzf.help_tags)
 km_set("n", "<leader>fs", fzf.git_status)
+km_set("n", "<leader>fr", fzf.oldfiles)
 
 local gs = require('gitsigns')
 
