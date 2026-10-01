@@ -547,7 +547,7 @@ show_startup_tips false
  
 // Whether to focus panes on mouse hover
 // default is false
-focus_follows_mouse true
+focus_follows_mouse false
  
 // Whether clicking a pane to focus it also sends the click into the pane
 // default is false

@@ -13,6 +13,8 @@ vim.lsp.enable({
     "yamlls",
     "neocmakelsp",
     "protols",
+    "ruff",
+    "pyright"
 })
 
 vim.diagnostic.config({ virtual_text = true })
