@@ -16,18 +16,22 @@ if status is-interactive
     alias yas='yay -S'
     alias yarns='yay -Rns'
 
-if type -q lsd
-    alias ls='lsd'
-    alias l='ls -l'
-    alias la='ls -a'
-    alias lla='ls -la'
-    alias lt='ls --tree'
-end
+    if type -q lsd
+        alias ls='lsd'
+        alias l='ls -l'
+        alias la='ls -a'
+        alias lla='ls -la'
+        alias lt='ls --tree'
+    end
+    
+    if type -q zoxide
+        alias cd='z'
+    end
+    if type -q fastfetch
+        alias ff='fastfetch'
+    end
+    alias cls='clear'
 
-if type -q zoxide
-    alias cd='z'
-end
- alias cls='clear'   
     zoxide init fish | source
     eval (ssh-agent -c) > /dev/null
     ssh-add ~/.ssh/nsugit > /dev/null
