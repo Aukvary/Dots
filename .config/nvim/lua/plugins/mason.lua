@@ -7,18 +7,20 @@ require("mason").setup({})
 
 require("mason-tool-installer").setup({
   ensure_installed = {
+    "black",
     "clang-format",
     "cpplint",
     "debugpy",
     "docker-compose-linter",
     "docker-language-server",
     "dockerfmt",
-    "luafmt",
     "mypy",
     "neocmakelsp",
+    "pgformatter", -- бинарь `pg_format` для conform (sql)
     "protols",
     "pyright",
     "ruff",
+    "stylua", -- форматтер lua для conform (заменяет luafmt)
     "yaml-language-server",
   },
   auto_update = true,

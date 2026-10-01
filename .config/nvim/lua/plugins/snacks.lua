@@ -4,10 +4,10 @@ vim.pack.add({
 
 require('snacks').setup({
     bigfile = { enabled = true },
-    dashboard = { enabled = true },
+    dashboard = { enabled = false }, -- единственный dashboard — alpha.nvim
     indent = { enabled = true },
     input = { enabled = true },
-    notifier = { enabled = true, timeout = 3000 },
+    notifier = { enabled = false }, -- уведомления — noice.nvim
     quickfile = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },

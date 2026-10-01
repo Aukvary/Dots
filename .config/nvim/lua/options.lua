@@ -1,5 +1,4 @@
-o = vim.opt
-g = vim.g
+local o = vim.opt
 
 local is_wsl = (function()
     local output = vim.fn.has('wsl')
@@ -11,7 +10,7 @@ local is_wsl = (function()
 end)()
 
 if is_wsl and vim.fn.executable('win32yank.exe') == 1 then
-    g.clipboard = {
+    vim.g.clipboard = {
         name = 'win32yank-wsl',
         copy = {
             ['+'] = 'win32yank.exe -i --crlf',
@@ -25,11 +24,24 @@ if is_wsl and vim.fn.executable('win32yank.exe') == 1 then
     }
 end
 
+o.autoindent = true
 o.clipboard = "unnamedplus"
+o.cursorline = true
 o.expandtab = true
+o.mouse = "a"
 o.nu = true
 o.relativenumber = true
+o.scrolloff = 5
 o.shiftwidth = 4
+o.signcolumn = "yes"
+o.smartcase = true
+o.smartindent = true
+o.splitbelow = true
+o.splitright = true
 o.tabstop = 4
 o.termguicolors = true
-g.mapleader = " "
+o.undofile = true
+o.updatetime = 250
+o.wrap = false
+
+vim.g.mapleader = " "
