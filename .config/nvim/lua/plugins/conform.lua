@@ -3,6 +3,12 @@ vim.pack.add({
 })
 
 require('conform').setup({
+    formatters = {
+        pg_format = {
+            -- Типы данных в верхний регистр; ключевые слова и так верхние (-u 2 по умолчанию)
+            args = { "-U", "2" },
+        },
+    },
     formatters_by_ft = {
         lua = { "stylua" },
         python = { "ruff_format" },
