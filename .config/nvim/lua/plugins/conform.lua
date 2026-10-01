@@ -5,13 +5,15 @@ vim.pack.add({
 require('conform').setup({
     formatters_by_ft = {
         lua = { "stylua" },
-        python = { "black" },
+        python = { "ruff_format" },
         cpp = { "clang-format" },
         c = { "clang-format" },
         objc = { "clang-format" },
         objcpp = { "clang-format" },
         cuda = { "clang-format" },
+        cmake = { "cmake_format" },
         rust = { "rustfmt" },
+        proto = { "clang-format" },
         dockerfile = { "dockerfmt" },
         sql = { "pg_format" },
     },

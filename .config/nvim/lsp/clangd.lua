@@ -6,6 +6,7 @@ return {
         "--header-insertion=iwyu",
         "--completion-style=detailed",
         "--function-arg-placeholders=true",
+        "--query-driver=/usr/sbin/gcc,/usr/sbin/g++",
     },
     filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
     root_markers = {

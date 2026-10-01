@@ -7,6 +7,7 @@ local lint = require('lint')
 lint.linters_by_ft = {
     cpp = { "cpplint" },
     dockercompose = { "dclint" },
+    sql = { "sqlfluff" },
 }
 
 lint.linters.cpplint.args = {

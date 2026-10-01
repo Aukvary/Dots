@@ -7,19 +7,19 @@ require("mason").setup({})
 
 require("mason-tool-installer").setup({
   ensure_installed = {
-    "black",
     "clang-format",
+    "cmakelang", -- cmake-format для conform (cmake)
     "cpplint",
-    "debugpy",
     "docker-compose-linter",
     "docker-language-server",
     "dockerfmt",
-    "mypy",
     "neocmakelsp",
     "pgformatter", -- бинарь `pg_format` для conform (sql)
+    "postgres-language-server", -- LSP для SQL (vim.lsp.enable)
     "protols",
     "pyright",
     "ruff",
+    "sqlfluff", -- линтер SQL для nvim-lint
     "stylua", -- форматтер lua для conform (заменяет luafmt)
     "yaml-language-server",
   },

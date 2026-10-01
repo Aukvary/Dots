@@ -15,6 +15,7 @@ vim.lsp.enable({
 	"protols",
 	"ruff",
 	"pyright",
+	"postgres-language-server",
 })
 
 vim.diagnostic.config({ virtual_text = true })
