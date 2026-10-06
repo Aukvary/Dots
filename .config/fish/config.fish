@@ -27,6 +27,11 @@ if status is-interactive
     if type -q zoxide
         alias cd='z'
     end
+
+    if type -q opencode
+        alias oc='opencode'
+    end
+
     if type -q fastfetch
         alias ff='fastfetch'
     end

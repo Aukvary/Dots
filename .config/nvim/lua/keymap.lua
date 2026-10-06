@@ -86,3 +86,7 @@ km_set("n", "gi", vim.lsp.buf.implementation, opts)
 km_set("n", "ga", fzf.lsp_references, opts)
 km_set("n", "K", vim.lsp.buf.hover, opts)
 km_set("n", "<Leader>fo", vim.lsp.buf.format, opts)
+
+-- lazygit
+km_set("n", "<leader>gg", "<Cmd>LazyGit<CR>", { desc = "Lazygit" })
+km_set("n", "<leader>gL", "<Cmd>LazyGitFilterCurrentFile<CR>", { desc = "Lazygit: история файла" })
