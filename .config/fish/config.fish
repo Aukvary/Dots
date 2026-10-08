@@ -39,7 +39,7 @@ if status is-interactive
 
     zoxide init fish | source
     eval (ssh-agent -c) > /dev/null
-    ssh-add ~/.ssh/nsugit > /dev/null
+    ssh-add ~/.ssh/github > /dev/null
     clear
 end
 

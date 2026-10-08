@@ -1,0 +1,159 @@
+set $mod Mod4
+set $term footclient
+set $menu fuzzel
+
+font pango:JetBrainsMono Nerd Font 14
+gaps inner 5
+default_border pixel 5
+client.background #222222
+focus_follows_mouse yes
+
+client.focused          #a6e3a1 #a6e3a1 #a6e3a1 #a6e3a1
+client.focused_inactive #444444 #1e1e2e #1e1e2e #444444
+client.unfocused        #444444 #1e1e2e #1e1e2e #444444
+client.urgent           #ff0000 #1e1e2e #1e1e2e #ff0000
+
+input type:keyboard {
+    xkb_layout us,ru
+    xkb_options grp:win_space_toggle
+    xkb_numlock disabled
+    repeat_rate 25
+    repeat_delay 600
+}
+
+input type:touchpad {
+    tap enabled
+    tap_button_map lrm
+    drag_lock disabled
+    natural_scroll enabled
+    dwt enabled
+    scroll_method two_finger
+    click_method button_areas
+    accel_profile adaptive
+    pointer_accel 0.0
+}
+
+assign [app_id="org.telegram.desktop"] workspace 2
+assign [class="^brave"] workspace 3
+assign [app_id="^brave"] workspace 3
+
+exec foot --server
+exec swaybg -i /home/aukvary/wallpapers/horizontal.jpeg
+exec Telegram
+exec brave
+
+bindsym --to-code $mod+d exec $menu
+bindsym --to-code $mod+Return exec $term
+
+# яркость
+bindsym --to-code XF86MonBrightnessDown exec "brightnessctl set 5%-"
+bindsym --to-code XF86MonBrightnessUp exec "brightnessctl set +5%"
+
+# медиа
+bindsym --to-code XF86AudioPlay exec "playerctl play-pause"
+bindsym --to-code XF86AudioPause exec "playerctl play-pause"
+bindsym --to-code XF86AudioNext exec "playerctl next"
+bindsym --to-code XF86AudioPrev exec "playerctl previous"
+bindsym --to-code XF86AudioStop exec "playerctl stop"
+
+# громкость (из niri)
+bindsym --to-code XF86AudioRaiseVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"
+bindsym --to-code XF86AudioLowerVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"
+bindsym --to-code XF86AudioMute exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+bindsym --to-code XF86AudioMicMute exec "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+
+# скриншоты
+bindsym --to-code Ctrl+Alt+z exec 'grim -g "$(slurp)" - | wl-copy'
+bindsym --to-code $mod+Shift+s exec "grim - | wl-copy"
+
+# навигация
+bindsym --to-code $mod+h focus left
+bindsym --to-code $mod+j focus down
+bindsym --to-code $mod+k focus up
+bindsym --to-code $mod+l focus right
+
+# workspace
+bindsym --to-code $mod+Tab workspace next
+bindsym --to-code $mod+g "gaps inner current toggle; gaps outer current toggle"
+
+# окна
+bindsym --to-code $mod+Shift+q kill
+bindsym --to-code $mod+t layout default
+bindsym --to-code $mod+Shift+space floating toggle
+bindsym --to-code $mod+e fullscreen toggle
+
+# перемещение/изменение размера плавающих окон (шаг 40px, из dwl)
+bindsym --to-code $mod+Left move left 40px
+bindsym --to-code $mod+Right move right 40px
+bindsym --to-code $mod+Up move up 40px
+bindsym --to-code $mod+Down move down 40px
+bindsym --to-code $mod+Shift+Left resize shrink width 40px
+bindsym --to-code $mod+Shift+Right resize grow width 40px
+bindsym --to-code $mod+Shift+Up resize shrink height 40px
+bindsym --to-code $mod+Shift+Down resize grow height 40px
+
+# мониторы
+bindsym --to-code $mod+comma focus output left
+bindsym --to-code $mod+period focus output right
+bindsym --to-code $mod+Shift+comma move container to output left
+bindsym --to-code $mod+Shift+period move container to output right
+
+# теги (workspace)
+bindsym --to-code $mod+1 workspace number 1
+bindsym --to-code $mod+2 workspace number 2
+bindsym --to-code $mod+3 workspace number 3
+bindsym --to-code $mod+4 workspace number 4
+bindsym --to-code $mod+5 workspace number 5
+bindsym --to-code $mod+6 workspace number 6
+bindsym --to-code $mod+7 workspace number 7
+bindsym --to-code $mod+8 workspace number 8
+bindsym --to-code $mod+9 workspace number 9
+bindsym --to-code $mod+Shift+1 move container to workspace number 1
+bindsym --to-code $mod+Shift+2 move container to workspace number 2
+bindsym --to-code $mod+Shift+3 move container to workspace number 3
+bindsym --to-code $mod+Shift+4 move container to workspace number 4
+bindsym --to-code $mod+Shift+5 move container to workspace number 5
+bindsym --to-code $mod+Shift+6 move container to workspace number 6
+bindsym --to-code $mod+Shift+7 move container to workspace number 7
+bindsym --to-code $mod+Shift+8 move container to workspace number 8
+bindsym --to-code $mod+Shift+9 move container to workspace number 9
+
+# выход
+bindsym --to-code $mod+Shift+e exit
+
+# погасить мониторы (из niri)
+bindsym --to-code $mod+Shift+p output * dpms off
+
+# виртуальные терминалы (chvt)
+bindsym --to-code Ctrl+Alt+F1 exec chvt 1
+bindsym --to-code Ctrl+Alt+F2 exec chvt 2
+bindsym --to-code Ctrl+Alt+F3 exec chvt 3
+bindsym --to-code Ctrl+Alt+F4 exec chvt 4
+bindsym --to-code Ctrl+Alt+F5 exec chvt 5
+bindsym --to-code Ctrl+Alt+F6 exec chvt 6
+bindsym --to-code Ctrl+Alt+F7 exec chvt 7
+bindsym --to-code Ctrl+Alt+F8 exec chvt 8
+bindsym --to-code Ctrl+Alt+F9 exec chvt 9
+bindsym --to-code Ctrl+Alt+F10 exec chvt 10
+bindsym --to-code Ctrl+Alt+F11 exec chvt 11
+bindsym --to-code Ctrl+Alt+F12 exec chvt 12
+
+bar {
+    position top
+    font pango:JetBrainsMono Nerd Font 14
+    status_command $HOME/.config/sway/status.sh
+    status_padding 6
+    status_edge_padding 6
+    tray_output none
+    colors {
+        background #1e1e2e
+        statusline #cdd6f4
+        focused_statusline #cdd6f4
+        separator #45475a
+        focused_separator #45475a
+        focused_workspace  #1e1e2e #45475a #cba6f7
+        active_workspace   #1e1e2e #45475a #cdd6f4
+        inactive_workspace #1e1e2e #313244 #a6adc8
+        urgent_workspace   #1e1e2e #f38ba8 #11111b
+    }
+}
