@@ -52,3 +52,7 @@ fish_add_path --append $HOME/.local/share/nvim/mason/bin
 for file in ~/.config/fish/conf.d/*.fish
     source $file
 end
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/aukvary/.local/bin" $PATH
