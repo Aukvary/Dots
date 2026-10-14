@@ -91,8 +91,6 @@ km_set("n", "<Leader>fo", vim.lsp.buf.format, opts)
 km_set("n", "<leader>gg", "<Cmd>LazyGit<CR>", { desc = "Lazygit" })
 km_set("n", "<leader>gL", "<Cmd>LazyGitFilterCurrentFile<CR>", { desc = "Lazygit: история файла" })
 
-local MIN_SIZE = 10
-
 km_set("n", "<C-j>", "<Cmd>resize +2<CR>", { desc = "Окно уже" })
 km_set("n", "<C-k>", "<Cmd>resize -2<CR>", { desc = "Окно шире" })
 km_set("n", "<C-h>", "<Cmd>vertical resize -2<CR>", { desc = "Окно выше" })
