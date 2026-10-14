@@ -3,7 +3,15 @@ vim.pack.add({
 })
 
 require('which-key').setup({
-    preset = "modern",
+    preset = {
+        "modern",
+        items = {
+            ["<C-h>"] = { name = "Окно уже" },
+            ["<C-l>"] = { name = "Окно шире" },
+            ["<C-j>"] = { name = "Окно выше" },
+            ["<C-k>"] = { name = "Окно ниже" },
+        },
+    },
     win = {
         border = "single",
     },
