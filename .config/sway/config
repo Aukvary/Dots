@@ -38,7 +38,7 @@ assign [class="^brave"] workspace 3
 assign [app_id="^brave"] workspace 3
 
 exec foot --server
-exec swaybg -i /home/aukvary/wallpapers/horizontal.jpeg
+exec swaybg -i $HOME/dots/wallpapers/horizontal.jpeg
 exec Telegram
 exec brave
 exec sleep 2 && footclient -a obs-nvim -D ~/AuObs nvim ~/AuObs/main.md
