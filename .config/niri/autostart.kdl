@@ -1,5 +1,5 @@
 spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
-spawn-at-startup "foot --server"
+spawn-at-startup "foot" "--server"
 spawn-sh-at-startup "awww img -o \"DP-1\" ~/dots/wallpapers/main.png"
 spawn-sh-at-startup "awww img -o \"HDMI-A-1\" ~/dots/wallpapers/vertical2.jpeg"
