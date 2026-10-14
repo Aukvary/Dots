@@ -26,6 +26,7 @@ if status is-interactive
     
     if type -q zoxide
         alias cd='z'
+        zoxide init fish | source
     end
 
     if type -q opencode
@@ -37,9 +38,10 @@ if status is-interactive
     end
     alias cls='clear'
 
-    zoxide init fish | source
-    eval (ssh-agent -c) > /dev/null
-    ssh-add ~/.ssh/github > /dev/null
+    if not pgrep -x ssh-agent > /dev/null
+        eval (ssh-agent -c) > /dev/null
+    end
+    ssh-add ~/.ssh/github 2> /dev/null
     clear
 end
 
@@ -48,11 +50,3 @@ set -gx PATH $HOME/.local/bin $PATH
 # Бинари, установленные Mason'ом (postgres-language-server, pg_format и т.д.)
 # Добавляем в конец, чтобы не перекрывать системные clang-format и т.п.
 fish_add_path --append $HOME/.local/share/nvim/mason/bin
-
-for file in ~/.config/fish/conf.d/*.fish
-    source $file
-end
-
-
-# Added by Antigravity CLI installer
-set -gx PATH "/home/aukvary/.local/bin" $PATH
