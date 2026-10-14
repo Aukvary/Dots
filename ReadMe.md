@@ -2,7 +2,7 @@
 - OS: CachyOS
 - Windows Manager: Niri
 - Widgets: Quickshell
-- Terminal: Alacritty
+- Terminal: foot
 - Shell: fish
 - File Manager: Nautilus/SuperFile
 - Editor: nvim
