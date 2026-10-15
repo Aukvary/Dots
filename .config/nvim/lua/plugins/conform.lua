@@ -21,6 +21,9 @@ require('conform').setup({
         rust = { "rustfmt" },
         proto = { "clang-format" },
         dockerfile = { "dockerfmt" },
+        dockercompose = { "prettier" },
+        json = { "prettier" },
+        yaml = { "prettier" },
         sql = { "pg_format" },
     },
     format_on_save = {

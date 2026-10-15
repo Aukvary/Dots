@@ -16,6 +16,7 @@ require("mason-tool-installer").setup({
 		"neocmakelsp",
 		"pgformatter", -- бинарь `pg_format` для conform (sql)
 		"postgres-language-server", -- LSP для SQL (vim.lsp.enable)
+		"prettier", -- форматтер json/yaml/dockercompose для conform
 		"protols",
 		"pyright",
 		"ruff",
@@ -24,6 +25,6 @@ require("mason-tool-installer").setup({
 		"yaml-language-server",
 		"luacheck",
 	},
-	auto_update = true,
+	auto_update = false,
 	run_on_start = true,
 })

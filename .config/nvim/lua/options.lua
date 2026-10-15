@@ -1,10 +1,6 @@
 local o = vim.opt
 
 local is_wsl = (function()
-	local output = vim.fn.has("wsl")
-	if output == 1 then
-		return true
-	end
 	return vim.fn.filereadable("/proc/version") == 1
 		and vim.fn.readfile("/proc/version")[1]:lower():match("microsoft") ~= nil
 end)()
@@ -28,6 +24,7 @@ o.autoindent = true
 o.clipboard = "unnamedplus"
 o.cursorline = true
 o.expandtab = true
+o.ignorecase = true
 o.mouse = "a"
 o.nu = true
 o.relativenumber = true

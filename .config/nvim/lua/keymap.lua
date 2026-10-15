@@ -85,13 +85,13 @@ km_set("n", "gd", vim.lsp.buf.definition, opts)
 km_set("n", "gi", vim.lsp.buf.implementation, opts)
 km_set("n", "ga", fzf.lsp_references, opts)
 km_set("n", "K", vim.lsp.buf.hover, opts)
-km_set("n", "<Leader>fo", vim.lsp.buf.format, opts)
+km_set("n", "<leader>fo", vim.lsp.buf.format, opts)
 
 -- lazygit
 km_set("n", "<leader>gg", "<Cmd>LazyGit<CR>", { desc = "Lazygit" })
 km_set("n", "<leader>gL", "<Cmd>LazyGitFilterCurrentFile<CR>", { desc = "Lazygit: история файла" })
 
-km_set("n", "<C-j>", "<Cmd>resize +2<CR>", { desc = "Окно уже" })
-km_set("n", "<C-k>", "<Cmd>resize -2<CR>", { desc = "Окно шире" })
-km_set("n", "<C-h>", "<Cmd>vertical resize -2<CR>", { desc = "Окно выше" })
-km_set("n", "<C-l>", "<Cmd>vertical resize +2<CR>", { desc = "Окно ниже" })
+km_set("n", "<C-j>", "<Cmd>resize +2<CR>", { desc = "Окно выше" })
+km_set("n", "<C-k>", "<Cmd>resize -2<CR>", { desc = "Окно ниже" })
+km_set("n", "<C-h>", "<Cmd>vertical resize -2<CR>", { desc = "Окно уже" })
+km_set("n", "<C-l>", "<Cmd>vertical resize +2<CR>", { desc = "Окно шире" })
