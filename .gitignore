@@ -9,3 +9,5 @@
 
 # Local-only, must not be published
 .config/environment.d/ag-unlocker.conf
+
+db_ui/*

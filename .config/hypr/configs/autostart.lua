@@ -1,3 +1,5 @@
 hl.on("hyprland.start", function()
-	hl.exec_cmd("foot --client")
+	hl.exec_cmd("foot --server")
+	hl.exec_cmd("hyprpaper")
+	hl.exec_cmd("waybar")
 end)

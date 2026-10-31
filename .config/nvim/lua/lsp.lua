@@ -16,6 +16,7 @@ vim.lsp.enable({
 	"ruff",
 	"pyright",
 	"postgres-language-server",
+	"qmlls",
 })
 
 vim.diagnostic.config({ virtual_text = true, severity_sort = true })

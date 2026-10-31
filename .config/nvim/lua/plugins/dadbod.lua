@@ -6,6 +6,9 @@ vim.pack.add({
 
 vim.g.db_ui_use_nerd_fonts = 1
 
+-- Каталог для сохранённых запросов и connections.json
+vim.g.db_ui_save_location = "/home/aukvary/Dots/db_ui"
+
 -- Отключаем buffer-local маппинги dadbod-ui из sql-буферов
 -- (<Leader>W/E/S = сохранить/запустить запрос), чтобы они не мешали
 -- глобальным биндам, как <leader>s = :w. Команды DBUI*/:DB остаются.

@@ -3,10 +3,10 @@ hl.config({
 		gaps_in = 2.5,
 		gaps_out = 5,
 
-		border_size = 2,
+		border_size = 3,
 
 		col = {
-			active_border = { colors = { "rgba(b4befeFF)", "rgba(74c7ecFF)", "rgba(89b4faFF)" }, angle = 120 },
+			active_border = { colors = { "rgba(cba6f7ff)" }, angle = 120 },
 			inactive_border = "rgba(66313244)",
 		},
 
@@ -18,25 +18,11 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 10,
+		rounding = 0,
 		rounding_power = 2,
 
 		active_opacity = 1.0,
 		inactive_opacity = 1.0,
-
-		shadow = {
-			enabled = true,
-			range = 4,
-			render_power = 3,
-			color = 0xee1a1a1a,
-		},
-
-		blur = {
-			enabled = true,
-			size = 3,
-			passes = 1,
-			vibrancy = 0.1696,
-		},
 	},
 
 	animations = {
@@ -44,17 +30,15 @@ hl.config({
 	},
 })
 
--- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
 hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
 hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
 hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
 
--- Default springs
-hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+hl.curve("easy", { type = "spring", mass = 1, stiffness = 1000, dampening = 50 })
 
-hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
+hl.animation({ leaf = "global", enabled = true, speed = 75, bezier = "default" })
 hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
 hl.animation({ leaf = "windows", enabled = true, speed = 4.79, spring = "easy" })
 hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "popin 87%" })
@@ -67,26 +51,23 @@ hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQu
 hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, spring = "easy" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, spring = "easy" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, spring = "easy" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 
--- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
 	dwindle = {
-		preserve_split = true, -- You probably want this
+		preserve_split = true,
 	},
 })
 
--- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
 	master = {
 		new_status = "master",
 	},
 })
 
--- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
 hl.config({
 	scrolling = {
 		fullscreen_on_one_column = true,
@@ -94,14 +75,10 @@ hl.config({
 	},
 })
 
-----------------
-----  MISC  ----
-----------------
-
 hl.config({
 	misc = {
-		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
-		disable_hyprland_logo = false, -- If true disables the random hyprland logo / anime girl background. :(
+		force_default_wallpaper = -1,
+		disable_hyprland_logo = false,
 		focus_on_activate = false,
 		splash_font_family = "Inter V",
 		allow_session_lock_restore = true,

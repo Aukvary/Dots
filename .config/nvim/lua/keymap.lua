@@ -10,6 +10,28 @@ km_set("n", "<leader>db", "<Cmd>DBUIToggle<CR>")
 km_set("n", "<leader>df", "<Cmd>DBUIFindBuffer<CR>")
 km_set("n", "<leader>da", "<Cmd>DBUIAddConnection<CR>")
 
+km_set("n", "<leader>ds", function()
+	if vim.b.dbui_db_key_name == nil then
+		vim.notify("Работает только в query-буфере db_ui", vim.log.levels.WARN)
+		return
+	end
+	local save_loc = vim.g.db_ui_save_location
+	if not save_loc or save_loc == "" then
+		vim.notify("g:db_ui_save_location не задан", vim.log.levels.ERROR)
+		return
+	end
+	-- ключ связи: <имя>_<source>; имя — всё до последней "_<source>"
+	local conn = vim.b.dbui_db_key_name:match("^(.*)_[%w]+$") or ""
+	local dir = vim.fn.fnamemodify(save_loc, ":p") .. "/" .. conn
+	local name = vim.fn.input("Save as: ")
+	if name == "" then return end
+	if not name:find("%.sql$", 1, true) then name = name .. ".sql" end
+	vim.fn.mkdir(dir, "p")
+	local full = dir .. "/" .. name
+	vim.cmd("silent! w " .. vim.fn.fnameescape(full))
+	vim.notify("Запрос сохранён: " .. full .. " (обновите DBUI: R в drawer)", vim.log.levels.INFO)
+end, { desc = "Сохранить запрос (dadbod)" })
+
 km_set("n", "<leader>rq", "<Cmd>%DB<CR>")
 km_set("n", "<leader>r", "<Plug>(db-execute-op)")
 km_set("v", "<leader>r", "<Plug>(db-execute)")

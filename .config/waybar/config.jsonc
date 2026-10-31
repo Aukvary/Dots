@@ -6,9 +6,9 @@
 "margin": "0px 2px",
 "reload_style_on_change": true,
 
-"modules-left": ["group/powermenu", "group/audio", "niri/language"],
+"modules-left": ["group/powermenu", "group/audio", "battery", "hyprland/language", "network"],
   "modules-center": ["group/time-date", "group/media"],
-  "modules-right": ["tray", "niri/workspaces"],
+  "modules-right": ["tray", "hyprland/workspaces"],
   
   "hyprland/workspaces": {
       "tooltip": false,
@@ -26,9 +26,23 @@
       }
   },
 
-  "niri/language": {
+  "hyprland/language": {
     "format": "󰇧 {short}"
   },
+
+"network": {
+	"interface": "wlan0",
+	"format": "{ifname}",
+	"format-wifi": "{signalStrength}% ",
+	"format-ethernet": "{ifname} ",
+	"format-disconnected": "", 
+    "format-disconnected": "",
+	"tooltip-format": "{ifname}",
+	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+	"tooltip-format-ethernet": "{ifname} ",
+	"tooltip-format-disconnected": "Disconnected",
+	"max-length": 50
+},
 
   "group/time-date": {
       "orientation": "horizontal",
@@ -88,6 +102,16 @@
       "icon-size": 16,
       "spacing": 10
   },
+
+"battery": {
+	"bat": "BAT0",
+	"interval": 60,
+	"format": "{capacity}% {icon}",
+	"format-icons": {
+		"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+		"charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+	}
+ },
 
 "group/media": {
     "orientation": "horizontal",

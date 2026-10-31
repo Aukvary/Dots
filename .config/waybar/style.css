@@ -12,6 +12,8 @@ window#waybar {
 
 #powermenu,
 #audio,
+#battery,
+#network,
 #language,
 #time-date,
 #media,
@@ -21,7 +23,6 @@ window#waybar {
     padding: 0px 6px;
     margin: 2px 2px;
     color: #cdd6f4;
-    border-radius: 8px;
     border: 1px solid rgba(203, 166, 247, 0.3);
 }
 
@@ -48,6 +49,8 @@ window#waybar {
     color: #cba6f7;
 }
 
+#battery,
+#network,
 #language {
     color: #cba6f7;
 }
@@ -56,6 +59,7 @@ window#waybar {
 #custom-poweroff:hover,
 #custom-reboot:hover,
 #pulseaudio:hover,
+#battery:hover,
 #custom-prev:hover,
 #custom-pause:hover,
 #custom-next:hover {
@@ -80,7 +84,6 @@ window#waybar {
 
 #pulseaudio-slider {
     min-width: 30px;
-    border-radius: 4px;
     padding: 0px 25px;
     margin: 4px 4px;
 }
@@ -96,13 +99,11 @@ window#waybar {
 #pulseaudio-slider trough {
     min-height: 8px;
     min-width: 10px;
-    border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 #pulseaudio-slider highlight {
     min-width: 10px;
-    border-radius: 5px;
     background: #cba6f7;
 }
 
@@ -122,4 +123,12 @@ window#waybar {
 #custom-reboot,
 #custom-power-button {
     padding: 0px 10px;
+}
+
+#network {
+    padding: 0px 15px;
+}
+
+#battery.critical {
+    color: #f38ba8;
 }
