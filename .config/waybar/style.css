@@ -17,6 +17,7 @@ window#waybar {
 #language,
 #time-date,
 #media,
+#custom-artist-name,
 #tray,
 #workspaces {
     background-color: rgba(24, 24, 37, 0.85);
@@ -39,6 +40,7 @@ window#waybar {
 #pulseaudio-slider,
 #clock,
 #custom-media-name, 
+#custom-artist-name,
 #custom-prev,
 #custom-pause,
 #custom-next,
@@ -51,6 +53,7 @@ window#waybar {
 
 #battery,
 #network,
+#custom-artist-name,
 #language {
     color: #cba6f7;
 }
