@@ -1,9 +1,3 @@
-local f = io.open("/etc/hostname")
-local host = f and (f:read("*a"):gsub("%s+$", "")) or (os.getenv("HOSTNAME") or "")
-if f then
-	f:close()
-end
-
 if host == "aukvary-laptop" then
 	hl.monitor({
 		output = "eDP-1",
@@ -31,6 +25,6 @@ else
 		mode = "1920x1080@75",
 		position = "2560x768",
 		scale = 1,
-		ransform = 1,
+		transform = 1,
 	})
 end

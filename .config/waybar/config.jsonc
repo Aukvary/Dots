@@ -8,7 +8,7 @@
 
 "modules-left": ["group/powermenu", "group/audio", "battery", "niri/language", "hyprland/language", "network"],
   "modules-center": ["group/time-date", "group/media"],
-  "modules-right": ["tray", "hyprland/workspaces", "niri/workspaces"],
+  "modules-right": ["tray", "hyprland/workspaces"],
   
   "hyprland/workspaces": {
       "tooltip": false,
@@ -27,9 +27,6 @@
   },
 
   "hyprland/language": {
-    "format": "󰇧 {short}"
-  },
-  "niri/language": {
     "format": "󰇧 {short}"
   },
 

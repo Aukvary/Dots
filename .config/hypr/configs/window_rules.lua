@@ -16,14 +16,6 @@
 --     rounding    = 0,
 -- })
 
-hl.window_rule({
-	name = "move-hyprland-run",
-	match = { class = "hyprland-run" },
-
-	move = "20 monitor_h-120",
-	float = true,
-})
-
 local suppressMaximizeRule = hl.window_rule({
 	name = "suppress-maximize-events",
 	match = { class = ".*" },
@@ -44,3 +36,43 @@ hl.window_rule({
 
 	no_focus = true,
 })
+
+if host ~= "aukvary-laptop" then
+	hl.window_rule({
+		name = "tty blur",
+		match = {
+			class = "^foot(client)?$",
+		},
+	})
+	hl.window_rule({
+		name = "tg start up",
+		match = {
+			class = "^org.telegram.desktop$",
+		},
+		monitor = "HDMI-A-1",
+	})
+
+	hl.window_rule({
+		name = "tg viewer",
+		match = {
+			class = "^org.telegram.desktop$",
+			title = "Media viewer",
+		},
+	})
+
+	hl.window_rule({
+		name = "ds start up",
+		match = {
+			class = "^vesktop$",
+		},
+		monitor = "HDMI-A-1",
+	})
+
+	hl.window_rule({
+		name = "yandex music start up",
+		match = {
+			class = "YandexMusic$",
+		},
+		monitor = "HDMI-A-2",
+	})
+end
