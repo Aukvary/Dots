@@ -75,4 +75,13 @@ if host ~= "aukvary-laptop" then
 		},
 		monitor = "HDMI-A-2",
 	})
+else
+	hl.window_rule({
+		name = "tg start up",
+		match = {
+			class = "^org.telegram.desktop$",
+		},
+		workspace = "2",
+		focus_on_activate = false,
+	})
 end
