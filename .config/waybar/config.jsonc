@@ -33,7 +33,7 @@
 "network": {
 	"interface": "wlan0",
 	"format": "{ifname}",
-	"format-wifi": "{signalStrength}% ",
+	"format-wifi": " ",
 	"format-ethernet": "{ifname} ",
 	"format-disconnected": "", 
     "format-disconnected": "",

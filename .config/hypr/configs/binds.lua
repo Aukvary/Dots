@@ -31,6 +31,7 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + ALT + H", hl.dsp.layout("colresize -0.25"))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.layout("colresize +0.25"))
 hl.bind(mainMod .. " + F", hl.dsp.layout("colresize 1.0"))
+hl.bind(mainMod .. "+ SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + S", hl.dsp.layout("colresize 0.5"))
 
 hl.bind(mainMod .. " + CTRL + H", hl.dsp.layout("swapcol l"))
