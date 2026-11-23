@@ -49,7 +49,7 @@
       "drawer": {
         "transition-duration": 300,
         "children-class": "clocks",
-        "transition-left-to-right": false,
+        "transition-left-to-right": false
       },
       "modules": [
         "clock#time",

@@ -5,8 +5,8 @@ hl.on("hyprland.start", function()
 		hl.exec_cmd("hyprpaper")
 	else
 		hl.exec_cmd("hyprpaper --config $HOME/.config/hypr/hyprpaper-desktop.conf")
+		hl.exec_cmd("yandex-music")
 	end
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("Telegram")
-	hl.exec_cmd("yandex-music")
 end)
