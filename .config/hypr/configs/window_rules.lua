@@ -19,6 +19,14 @@ hl.window_rule({
 	no_focus = true,
 })
 
+hl.window_rule({
+	name = "hyprland-share-picker",
+	match = {
+		class = "^hyprland-share-picker$",
+	},
+	float = true,
+})
+
 if host ~= "aukvary-laptop" then
 	hl.window_rule({
 		name = "tty blur",
