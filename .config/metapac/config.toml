@@ -1,0 +1,9 @@
+enabled_backends = ["arch", "cargo"]
+hostname_groups_enabled = true
+
+[arch]
+package_manager = "yay"
+
+[hostname_groups]
+aukvary-pc = ["common", "desktop"]
+aukvary-laptop = ["common", "laptop"]
