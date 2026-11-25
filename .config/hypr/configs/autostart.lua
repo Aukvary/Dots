@@ -1,5 +1,5 @@
 hl.on("hyprland.start", function()
-	hl.exec_cmd("hyprctl setcursor mocu-white-right 28")
+	hl.exec_cmd("hyprctl setcursor Mocu-Black-Right 36")
 	hl.exec_cmd("foot --server")
 	if host == "aukvary-laptop" then
 		hl.exec_cmd("hyprpaper")

@@ -1,5 +1,5 @@
-hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", "Mocu-White-Right")
+hl.env("XCURSOR_THEME", "Mocu-Black-Right")
+hl.env("XCURSOR_SIZE", "36")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 hl.env("MOZ_USE_XINPUT2", "1")
 hl.env("GDK_BACKEND", "wayland,x11,*")
