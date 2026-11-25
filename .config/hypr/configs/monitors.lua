@@ -5,6 +5,13 @@ if host == "aukvary-laptop" then
 		position = "0x0",
 		scale = 1,
 	})
+
+	hl.monitor({
+		output = "HDMI-A-1",
+		mode = "preferred",
+		position = "auto",
+		scale = 1,
+	})
 else
 	hl.monitor({
 		output = "DP-1",
