@@ -1,0 +1,11 @@
+arch = { packages = [
+  "brightnessctl",
+  "intel-gpu-tools",
+  "intel-media-driver",
+  "intel-ucode",
+  "libva-utils",
+  "linux",
+  "vulkan-intel",
+  "wireless-regdb",
+  "zram-generator",
+] }
