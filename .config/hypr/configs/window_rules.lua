@@ -19,6 +19,7 @@ hl.window_rule({
 	no_focus = true,
 })
 
+<<<<<<< HEAD
 hl.window_rule({
 	name = "hyprland-share-picker",
 	match = {
@@ -28,12 +29,18 @@ hl.window_rule({
 })
 
 if host ~= "aukvary-laptop" then
+=======
+if host == "aukvary-laptop" then
+>>>>>>> 4647e6c (some)
 	hl.window_rule({
-		name = "tty blur",
+		name = "tg start up",
 		match = {
-			class = "^foot(client)?$",
+			class = "^org.telegram.desktop$",
 		},
+		workspace = "2",
+		focus_on_activate = false,
 	})
+else
 	hl.window_rule({
 		name = "tg start up",
 		match = {
@@ -64,14 +71,5 @@ if host ~= "aukvary-laptop" then
 			class = "YandexMusic$",
 		},
 		monitor = "HDMI-A-2",
-	})
-else
-	hl.window_rule({
-		name = "tg start up",
-		match = {
-			class = "^org.telegram.desktop$",
-		},
-		workspace = "2",
-		focus_on_activate = false,
 	})
 end
