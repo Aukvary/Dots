@@ -19,7 +19,6 @@ hl.window_rule({
 	no_focus = true,
 })
 
-<<<<<<< HEAD
 hl.window_rule({
 	name = "hyprland-share-picker",
 	match = {
@@ -28,10 +27,7 @@ hl.window_rule({
 	float = true,
 })
 
-if host ~= "aukvary-laptop" then
-=======
 if host == "aukvary-laptop" then
->>>>>>> 4647e6c (some)
 	hl.window_rule({
 		name = "tg start up",
 		match = {
