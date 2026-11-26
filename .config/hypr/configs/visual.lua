@@ -55,6 +55,7 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, spring = "easy
 hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, spring = "easy" })
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, spring = "easy" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
+hl.animation({ leaf = "monitorAdded", enabled = false, speed = 1, bezier = "default" })
 
 hl.config({
 	dwindle = {
