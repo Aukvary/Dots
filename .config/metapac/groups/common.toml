@@ -264,4 +264,6 @@ arch = { packages = [
   "zellij",
   "zip",
   "zoxide",
+  "mdadm",
+  "namcap",
 ] }
